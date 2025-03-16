@@ -16,15 +16,15 @@ send_notification() {
 cycle_count=0
 
 while true; do
-    send_notification "Pomodoro" "Commencez à travailler !"
+    send_notification "Pomodoro" "Start to work!"
     sleep $WORK_DURATION
     ((cycle_count++))
     if ((cycle_count == CYCLES_BEFORE_LONG_BREAK)); then
-        send_notification "Pomodoro" "Prenez une pause longue de 15 minutes !"
+        send_notification "Pomodoro" "Take a long break of 15 minutes!"
         sleep $LONG_BREAK_DURATION
         cycle_count=0
     else
-        send_notification "Pomodoro" "Prenez une pause courte de 5 minutes !"
+        send_notification "Pomodoro" "Take a short break of 5 minutes!"
         sleep $SHORT_BREAK_DURATION
     fi
 done
